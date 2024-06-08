@@ -13,63 +13,36 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
-
-.top-bar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background: gray;
-}
-
-.queue{
-    border: 0.1px solid black;
-    background-color: black;
-    color: white;
-    font-size: xx-large;
-}
-
-.logo{
-    border: 0.1px solid black;
-    background-color: black;
-    color: white;
-    font-size: xx-large;
-}
-.support{
-    border: 0.1px solid black;
-    background-color: black;
-    color: white;
-    font-size: xx-large;
-}
-
-.text{
-    border: 0.1px solid gray;
-    background-color: rgb(0, 0, 0, 0.1);
-    margin-left: 700px;
-    margin-right: 950px;
-    margin-top: 300px;
-}
-
 .popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    z-index: 9999;
-  }
-  
-.overlay {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 9998;
-}
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
