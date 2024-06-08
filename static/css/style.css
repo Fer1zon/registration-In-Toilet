@@ -4,14 +4,17 @@ body{
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    background: url(https://media1.tenor.com/m/4PTfc3ym8m0AAAAC/anime-flex.gif);
-    background-size: 100%;
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html{
+  background: url(https://getwallpapers.com/wallpaper/full/2/d/4/861710-full-size-anime-background-1920x1080-htc.jpg);
+  background-size: 100%;
 }
 .popup {
     display: none;
@@ -50,31 +53,56 @@ body{
   position: absolute;
   top: 0;
   left: 0;
-  width: 10%;
+  width: 23%;
   height: 100%;
-  background: rgb(0, 0, 0, 0.9);
+  background: rgb(0, 0, 0, 0.7);
   color: white;
 }
 .logo{
-  background-color: gray;
+  background: rgb(0, 0, 0, 0.4);
+  border: 0.1px solid white;
+  border-radius:10px;
   font-size: xx-large;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+a:hover{
+  color: rgb(255, 255, 255);
 }
 .themes{
-  background-color: gray;
+  background: rgb(0, 0, 0, 0.4);
+  border: 0.1px solid white;
+  border-radius:10px;
   font-size: xx-large;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
+}
+.nya{
+  background: rgb(0, 0, 0, 0.4);
+  border: 0.1px solid white;
+  border-radius:10px;
+  font-size: xx-large;
+  position: absolute;
+  margin-top: 900px;
+  width: 100%;
 }
 
 button{
-  background-color: gray;
+  background: rgb(0, 0, 0, 0.4);
+  border: 0.1px solid white;
+  border-radius:10px;
   color: white;
-  border: none;
-  font-size: large;
-  padding: 10px 72px;
+  padding: 10px ;
+  font-size: xx-large;
+  width: 100%;
   margin-top: 20px;
   font-family: "Oswald", sans-serif;
 }
 
 button:hover{
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(134, 133, 133);
 }
+
