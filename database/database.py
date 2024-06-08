@@ -11,16 +11,14 @@ new_session = async_sessionmaker(dbEngine, expire_on_commit=False)
 class Model(DeclarativeBase):
     pass
 
-# class Table(Model):
-#     __tablename__ = "accounts"
+class ToiletTable(Model):
+    __tablename__ = "toilet"
 
-#     id: Mapped[int] = mapped_column(primary_key=True)
-#     login: Mapped[str]
-#     password: Mapped[str]
-#     name: Mapped[str]
-#     surname: Mapped[str]
-#     balance: Mapped[int]
-#     special_token: Mapped[str]
+    id: Mapped[int] = mapped_column(primary_key=True)
+    title: Mapped[str]
+    description: Mapped[str]
+    pathToImg: Mapped[str]
+
 
 
 
