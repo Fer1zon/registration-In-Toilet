@@ -49,7 +49,9 @@ async def deleteToilet(toilet: DeleteToilet):
             }
     
 
-@router.get("/")
+@router.get("")
 async def getAllToilets():
-    pass
+    return {
+        "data" : await Toilets.allToilets()
+    }
 

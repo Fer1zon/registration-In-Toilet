@@ -2,7 +2,7 @@
 
 
 from sqlalchemy import select, delete
-from schemas import AddToilet, DeleteToilet
+from schemas import AddToilet, DeleteToilet, Toilet
 from database.database import new_session, ToiletTable
 
 
@@ -50,6 +50,18 @@ class Toilets():
             await session.commit()
 
     @classmethod
-    async def allToilets(self):
-        pass
+    async def allToilets(self) -> list[Toilet]:
+        async with new_session() as session:
+            query = select(ToiletTable)
+            result = await session.execute(query) 
+
+            
+            result1 = result.scalars().all()
+
+            
+            
+
+            result2 = [i.__dict__ for i in result1]
+
+            return result2
 

@@ -11,9 +11,10 @@ class AddToilet(BaseModel):
     
 
 
-class ToiletTable(AddToilet):
+class Toilet(AddToilet):
     id: int
 
 
 class DeleteToilet(BaseModel):
     id: int
+    
