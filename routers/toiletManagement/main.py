@@ -6,7 +6,7 @@ from fastapi.responses import HTMLResponse
 
 from fastapi.templating import Jinja2Templates
 
-from schemas import AddToilet, DeleteToilet
+from schemas import AddToilet, ChoiceToilet, DeleteToilet
 
 from repository import Toilets
 
@@ -54,4 +54,8 @@ async def getAllToilets():
     return {
         "data" : await Toilets.allToilets()
     }
+
+
+
+# @router.post("/get")
 

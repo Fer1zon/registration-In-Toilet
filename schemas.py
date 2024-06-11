@@ -15,6 +15,9 @@ class Toilet(AddToilet):
     id: int
 
 
+class ChoiceToilet(BaseModel):
+    id: int
+
 class DeleteToilet(BaseModel):
     id: int
     
