@@ -64,4 +64,18 @@ class Toilets():
             result2 = [i.__dict__ for i in result1]
 
             return result2
+        
+
+    @classmethod
+    async def getSearchToilets(self, title):
+        async with new_session() as session:
+            query = select(ToiletTable).where(ToiletTable.title == title)
+            result = await session.execute(query)
+            result1 = result.scalars().all()
+
+            return {
+                "count" : len(result1),
+                "data" : result1
+
+            }
 

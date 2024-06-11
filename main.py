@@ -12,6 +12,7 @@ from fastapi.staticfiles import StaticFiles
 
 from routers.mainSheet import router as mainRouter
 from routers.toiletManagement.main import router as toiletManagementRouter
+from routers.toiletManagement.search import router as searchRouter
 
 
 
@@ -34,4 +35,5 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 app.mount('/static', app=StaticFiles(directory='static'), name="static")
 app.include_router(mainRouter)
-app.include_router(toiletManagementRouter)       
+app.include_router(toiletManagementRouter)  
+app.include_router(searchRouter)     

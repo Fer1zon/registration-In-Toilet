@@ -20,4 +20,9 @@ class ChoiceToilet(BaseModel):
 
 class DeleteToilet(BaseModel):
     id: int
+
+
+
+class SearchToilets(BaseModel):
+    title: str
     
