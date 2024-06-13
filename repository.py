@@ -1,7 +1,7 @@
 """Тут прописываются команды в базу данных"""
 
 
-from sqlalchemy import select, delete
+from sqlalchemy import select, delete, column
 from schemas import AddToilet, DeleteToilet, Toilet
 from database.database import new_session, ToiletTable
 
@@ -69,7 +69,7 @@ class Toilets():
     @classmethod
     async def getSearchToilets(self, title):
         async with new_session() as session:
-            query = select(ToiletTable).where(ToiletTable.title == title)
+            query = select(ToiletTable).where(column("title").icontains(title.lower()))
             result = await session.execute(query)
             result1 = result.scalars().all()
 

@@ -1,5 +1,5 @@
 let place = document.getElementById("content-data");
-
+let axios = require('axios')
 
 async function openPopup() {
   console.log("sda")
@@ -9,10 +9,11 @@ async function openPopup() {
     data = data["data"]
 
     
-    let getData1 = await fetch("http://127.0.0.1:8000/toilet/search", {"title" : "Дешевый туалет"});
+    
+    
     let data1 = await getData1.json();
 
-    
+    console.log(data1)
     
     
     var index;
