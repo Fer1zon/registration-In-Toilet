@@ -1,10 +1,9 @@
 let place = document.getElementById("content-data");
 let openStatus = false
-
+let SearchBar = document.getElementById("MySearch");
 
 
 async function openPopup() {
-  console.log("open")
 
   if (openStatus == false) {
 
@@ -29,4 +28,15 @@ function closePopup() {
 
   place.innerHTML = ""
   document.getElementById("popup").style.display = "none";
+}
+
+function getSearchData() {
+  console.log(SearchBar.value)
+  
+  
+  
+
+
+
+
 }
