@@ -8,21 +8,39 @@ async function openPopup() {
   
 
   if (openStatus == false) {
+    openStatus = true
 
     let getData = await fetch('http://127.0.0.1:8000/toilet');
     let data = await getData.json();
     data = data["data"]
-    
-    var index;
-    for (index = 0; index < data.length; ++index) {
+
+    if (data.length == 0) {
+
+      place.innerHTML = ""
+      let el = document.createElement('h2');
+      el.innerHTML = "По такому запросу ничего не найдено"
+      place.appendChild(el)
+
+    }
+
+    else{
+
+      var index;
+      for (index = 0; index < data.length; ++index) {
       let span = document.createElement('p');
       span.innerHTML = data[index]["title"] + " - " + data[index]["description"]
       place.appendChild(span)
     }
 
+    }
+
+
+    
+    
+
     document.getElementById("popup").style.display = "block";
     ;
-    openStatus = true
+    
   }
 }
 function closePopup() {
