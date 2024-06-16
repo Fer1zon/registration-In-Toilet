@@ -47,7 +47,7 @@ async function getSearchData() {
 
     let data = await GetData.json();
 
-    console.log(data)
+    
 
 
     if (data["count"] == 0) {
@@ -62,8 +62,9 @@ async function getSearchData() {
       place.innerHTML = ""
 
       for (index = 0; index < data["data"].length; ++index) {
-        console.log("sd")
+        
         let span = document.createElement('p');
+        
         span.innerHTML = data["data"][index]["title"] + " - " + data["data"][index]["description"]
         place.appendChild(span)
       }
