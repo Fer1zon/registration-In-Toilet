@@ -8,22 +8,40 @@ async function openPopup() {
   
 
   if (openStatus == false) {
+    openStatus = true
 
     let getData = await fetch('http://127.0.0.1:8000/toilet');
     let data = await getData.json();
     data = data["data"]
-    
-    var index;
-    for (index = 0; index < data.length; ++index) {
+
+    if (data.length == 0) {
+
+      place.innerHTML = ""
+      let el = document.createElement('h2');
+      el.innerHTML = "По такому запросу ничего не найдено"
+      place.appendChild(el)
+
+    }
+
+    else{
+
+      var index;
+      for (index = 0; index < data.length; ++index) {
       let span = document.createElement('p');
       span.className = "content-unitasis"
       span.innerHTML = data[index]["title"] + " - " + data[index]["description"]
       place.appendChild(span)
     }
 
+    }
+
+
+    
+    
+
     document.getElementById("popup").style.display = "block";
     ;
-    openStatus = true
+    
   }
 }
 function closePopup() {
@@ -48,7 +66,7 @@ async function getSearchData() {
 
     let data = await GetData.json();
 
-    console.log(data)
+    
 
 
     if (data["count"] == 0) {
@@ -63,8 +81,9 @@ async function getSearchData() {
       place.innerHTML = ""
 
       for (index = 0; index < data["data"].length; ++index) {
-        console.log("sd")
+        
         let span = document.createElement('p');
+        
         span.innerHTML = data["data"][index]["title"] + " - " + data["data"][index]["description"]
         span.className = "content-unitasis"
         place.appendChild(span)
