@@ -34,8 +34,8 @@ function closePopup() {
 
 
 
-function getSearchData() {
-    let GetData = fetch("http://127.0.0.1:8000/toilet/search", {
+async function getSearchData() {
+    let GetData = await fetch("http://127.0.0.1:8000/toilet/search", {
     method: "POST",
     body: JSON.stringify({
       title : SearchBar.value
@@ -45,7 +45,7 @@ function getSearchData() {
     }
   });
 
-    let data = getData.json();
+    let data = await GetData.json();
 
     console.log(data)
   

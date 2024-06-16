@@ -30,7 +30,8 @@
     <button id="open-dialog" onclick="openPopup()">List toilet</button>
     <div id="popup" class="popup">
       <h1>List Unitas</h1>
-      <input type="search" id="MySearch" name="q" placeholder="найти мать">
+      <input type="search" id="MySearch" name="q" placeholder="найти мать"
+      onclick="getSearchData()">
       <button>Search</button>
       <span class="close" onclick="closePopup()">&times;</span>
       <div id = "popup-content" class="popup-content">
