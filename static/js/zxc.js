@@ -1,8 +1,12 @@
 let place = document.getElementById("content-data");
+let openStatus = false
+
 
 
 async function openPopup() {
-    
+  console.log("open")
+
+  if (openStatus == false) {
 
     let getData = await fetch('http://127.0.0.1:8000/toilet');
     let data = await getData.json();
@@ -17,10 +21,12 @@ async function openPopup() {
 
     document.getElementById("popup").style.display = "block";
     ;
-    
+    openStatus = true
   }
-  
+}
 function closePopup() {
-    place.innerHTML = ""
-    document.getElementById("popup").style.display = "none";
+  openStatus = false
+
+  place.innerHTML = ""
+  document.getElementById("popup").style.display = "none";
 }

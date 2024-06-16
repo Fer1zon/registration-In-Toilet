@@ -7,25 +7,33 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="icon" href="data:;base64,=">
 </head>
+<style>
+  body{
+    background: url(/static/img/pixelcut-export.png);
+    background-size: 100%;
+  }
+</style>
 <body>
 <header>
 
   <div class="left-panel">
     <div class="logo">
-      <a href="#" style="text-decoration: none;">SCIBIDI TOILET</a>
+      <img src="/static/img/logo.png" width="400px" alt="">
     </div>
     <div class="themes">
       <a href="#" style="text-decoration: none;">Наши точки</a>
     </div>
     <div class="nya">
-      <a href="#" style="text-decoration: none;">Информация</a>
+      <a href="#" style="text-decoration: none;">Профиль</a>
     </div>
     <div class="top-panel-content">
-    <button onclick="openPopup()">List toilet</button>
+    <button id="open-dialog" onclick="openPopup()">List toilet</button>
     <div id="popup" class="popup">
-      
+      <h1>List Unitas</h1>
+      <input type="search" id="MySearch" name="q" placeholder="найти мать">
+      <button>Search</button>
+      <span class="close" onclick="closePopup()">&times;</span>
       <div id = "popup-content" class="popup-content">
-        <span class="close" onclick="closePopup()">&times;</span>
         <div id = "content-data">
 
         </div>
@@ -35,15 +43,6 @@
 
 
 
-
-
-
-
-
-
-
-
-        
       </div>
     </div>
   </header>
