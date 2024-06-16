@@ -3,7 +3,9 @@ let openStatus = false
 let SearchBar = document.getElementById("MySearch");
 
 
+
 async function openPopup() {
+  
 
   if (openStatus == false) {
 
@@ -14,6 +16,7 @@ async function openPopup() {
     var index;
     for (index = 0; index < data.length; ++index) {
       let span = document.createElement('p');
+      span.className = "content-unitasis"
       span.innerHTML = data[index]["title"] + " - " + data[index]["description"]
       place.appendChild(span)
     }
@@ -30,8 +33,54 @@ function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
 
-function getSearchData() {
-  console.log(SearchBar.value)
+
+
+async function getSearchData() {
+    let GetData = await fetch("http://127.0.0.1:8000/toilet/search", {
+    method: "POST",
+    body: JSON.stringify({
+      title : SearchBar.value
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  });
+
+    let data = await GetData.json();
+
+    console.log(data)
+
+
+    if (data["count"] == 0) {
+      place.innerHTML = ""
+      let el = document.createElement('h2');
+      el.innerHTML = "По такому запросу ничего не найдено"
+      place.appendChild(el)
+
+    }
+
+    else{
+      place.innerHTML = ""
+
+      for (index = 0; index < data["data"].length; ++index) {
+        console.log("sd")
+        let span = document.createElement('p');
+        span.innerHTML = data["data"][index]["title"] + " - " + data["data"][index]["description"]
+        span.className = "content-unitasis"
+        place.appendChild(span)
+      }
+
+    }
+
+    
+
 
   
+
+
+
+    
+
+
+
 }

@@ -29,11 +29,12 @@
     <div class="top-panel-content">
     <button id="open-dialog" onclick="openPopup()">List toilet</button>
     <div id="popup" class="popup">
+      <span class="close" onclick="closePopup()">&times;</span>
       <h1>List Unitas</h1>
       <input type="search" id="MySearch" name="q" placeholder="найти мать">
       <button id="Search-button" onclick="getSearchData()">Search</button>
       <p id="output"></p>
-      <span class="close" onclick="closePopup()">&times;</span>
+      
       <div id = "popup-content" class="popup-content">
         <div id = "content-data">
 
