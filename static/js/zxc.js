@@ -33,5 +33,5 @@ function closePopup() {
 function getSearchData() {
   console.log(SearchBar.value)
 
-
+  
 }
