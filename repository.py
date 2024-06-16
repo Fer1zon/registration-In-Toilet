@@ -69,7 +69,7 @@ class Toilets():
     @classmethod
     async def getSearchToilets(self, title):
         async with new_session() as session:
-            query = select(ToiletTable).where(column("title").icontains(title.lower()))
+            query = select(ToiletTable).where(column("title").contains(title))
             result = await session.execute(query)
             result1 = result.scalars().all()
 

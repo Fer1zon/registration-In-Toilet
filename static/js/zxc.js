@@ -48,6 +48,31 @@ async function getSearchData() {
     let data = await GetData.json();
 
     console.log(data)
+
+
+    if (data["count"] == 0) {
+      place.innerHTML = ""
+      let el = document.createElement('h2');
+      el.innerHTML = "По такому запросу ничего не найдено"
+      place.appendChild(el)
+
+    }
+
+    else{
+      place.innerHTML = ""
+
+      for (index = 0; index < data["data"].length; ++index) {
+        console.log("sd")
+        let span = document.createElement('p');
+        span.innerHTML = data["data"][index]["title"] + " - " + data["data"][index]["description"]
+        place.appendChild(span)
+      }
+
+    }
+
+    
+
+
   
 
 
