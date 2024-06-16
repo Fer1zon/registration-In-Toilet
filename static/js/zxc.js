@@ -1,20 +1,17 @@
 let place = document.getElementById("content-data");
-let axios = require('axios')
+let openStatus = false
+let SearchBar = document.getElementById("MySearch");
+
+
 
 async function openPopup() {
-  console.log("sda")
+  
+
+  if (openStatus == false) {
 
     let getData = await fetch('http://127.0.0.1:8000/toilet');
     let data = await getData.json();
     data = data["data"]
-
-    
-    
-    
-    let data1 = await getData1.json();
-
-    console.log(data1)
-    
     
     var index;
     for (index = 0; index < data.length; ++index) {
@@ -25,10 +22,38 @@ async function openPopup() {
 
     document.getElementById("popup").style.display = "block";
     ;
-    
+    openStatus = true
   }
-  
+}
 function closePopup() {
-    place.innerHTML = ""
-    document.getElementById("popup").style.display = "none";
+  openStatus = false
+
+  place.innerHTML = ""
+  document.getElementById("popup").style.display = "none";
+}
+
+
+
+function getSearchData() {
+    let GetData = fetch("http://127.0.0.1:8000/toilet/search", {
+    method: "POST",
+    body: JSON.stringify({
+      title : SearchBar.value
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  });
+
+    let data = getData.json();
+
+    console.log(data)
+  
+
+
+
+    
+
+
+
 }
