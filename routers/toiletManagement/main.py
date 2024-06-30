@@ -27,12 +27,12 @@ async def addToilet(toilet: AddToilet):
             }
 
 
-@router.get("add")
+@router.get("/add")
 async def addToiletGet(request:Request):
     
     
     return templates.TemplateResponse(
-        "assets.html",
+        "two-slide.html",
         {
             "request": request,
             #"content" : response
