@@ -10,11 +10,11 @@ from schemas import AddToilet, ChoiceToilet, DeleteToilet
 
 from repository import Toilets
 
-
+from fastapi.templating import Jinja2Templates
 
 
 router = APIRouter(prefix="/toilet")
-
+templates = Jinja2Templates(directory="templates")
 
 @router.post("/add")
 async def addToilet(toilet: AddToilet):
@@ -25,6 +25,20 @@ async def addToilet(toilet: AddToilet):
         "ok" : True,
         "toiletId" : toiletId
             }
+
+
+@router.get("add")
+async def addToiletGet(request:Request):
+    
+    
+    return templates.TemplateResponse(
+        "assets.html",
+        {
+            "request": request,
+            #"content" : response
+            
+        }
+)
 
 
 
